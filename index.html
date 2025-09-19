@@ -1,268 +1,275 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <title>Cosmic Grain – Tabelul Numeric Universal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      background: radial-gradient(ellipse at center, #20233c 0%, #191d2b 100%);
-      color: #f0f4fc;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      padding: 2rem 1rem 1rem 1rem;
-      text-align: center;
-      background: linear-gradient(90deg, #1a1e33 60%, #2d3248 100%);
-      box-shadow: 0 3px 18px #0008;
-    }
-    header h1 {
-      font-size: 2.3em;
-      letter-spacing: 2px;
-      margin: 0 0 0.2em 0;
-      color: #85d0fb;
-      text-shadow: 0 0 8px #0e1a2b;
-    }
-    header p {
-      font-size: 1.2em;
-      color: #e0e4ee;
-      margin: 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: rgba(34, 38, 64, 0.96);
-      border-radius: 1.5em;
-      box-shadow: 0 0 24px #0005;
-    }
-    h2 {
-      color: #74b3fa;
-      margin-top: 0;
-    }
-    .operators {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .opcard {
-      flex: 1 1 170px;
-      min-width: 150px;
-      background: #24294a;
-      padding: 1rem;
-      border-radius: 1em;
-      box-shadow: 0 2px 8px #0004;
-      margin-bottom: 0.2em;
-      font-size: 1em;
-      transition: transform 0.15s;
-    }
-    .opcard:hover {
-      transform: scale(1.05);
-      background: #19203b;
-    }
-    .opnum {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #a2f5f8;
-      margin-bottom: 0.1em;
-      display: block;
-      text-shadow: 0 0 5px #49c8c8;
-    }
-    .tabel-section {
-      margin-top: 2.5em;
-      margin-bottom: 2.5em;
-      text-align: center;
-    }
-    button {
-      padding: 0.7em 2em;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 1em;
-      background: linear-gradient(90deg, #4fc3f7 40%, #2e82c1 100%);
-      color: #14243a;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 2px 8px #0004;
-      margin-bottom: 1em;
-      transition: background 0.2s;
-    }
-    button:hover {
-      background: linear-gradient(90deg, #5ee1fa 40%, #4fc3f7 100%);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1em 0;
-    }
-    th, td {
-      padding: 0.65em 0.5em;
-      border: 1px solid #38406e;
-      text-align: center;
-      font-size: 1em;
-    }
-    th {
-      background: #315279;
-      color: #f0f4fc;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-    td {
-      background: #23284a;
-      color: #eef6ff;
-    }
-    @media (max-width: 700px) {
-      .container { padding: 1em; }
-      .operators { flex-direction: column; }
-      .opcard { min-width: 0; }
-      th, td { font-size: 0.95em; }
-    }
-    .docu {
-      margin-bottom: 2.5em;
-      font-size: 1.1em;
-      line-height: 1.6;
-      color: #eaf1ff;
-    }
-    .contact {
-      text-align: center;
-      margin-top: 2.5em;
-      padding: 1.1em 0 1.3em 0;
-      background: linear-gradient(90deg, #1e253d 40%, #2a3b59 100%);
-      border-radius: 1em;
-      box-shadow: 0 3px 18px #0007;
-    }
-    .contact a {
-      color: #58ccf5;
-      text-decoration: underline;
-      font-weight: bold;
-      font-size: 1.1em;
-      letter-spacing: 1px;
-    }
-    .contact span {
-      color: #b8faff;
-      font-size: 1.05em;
-      margin-right: 0.5em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemul de Gestiune a Fluxurilor de Lucru</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6c63ff;
+            --secondary-color: #4a4a4a;
+            --background-color: #f0f2f5;
+            --card-background: #fff;
+            --shadow-light: rgba(0,0,0,0.1);
+            --shadow-strong: rgba(108, 99, 255, 0.4);
+            --border-color: #e0e0e0;
+            --text-color: #333;
+            --text-light: #555;
+            --link-color: #337ab7;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .app-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px 30px;
+            background: var(--card-background);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px var(--shadow-light);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 2.2em;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+
+        .input-group textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1em;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        .mode-selection {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .mode-selection button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            background-color: var(--border-color);
+            color: var(--text-light);
+            font-size: 0.9em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            flex-grow: 1;
+            margin: 5px;
+        }
+
+        .mode-selection button:hover {
+            background-color: #d0d0d0;
+            transform: translateY(-2px);
+        }
+
+        .mode-selection button.active {
+            background-color: var(--primary-color);
+            color: #fff;
+            box-shadow: 0 4px 15px var(--shadow-strong);
+        }
+
+        .result-container {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            min-height: 150px;
+            overflow-y: auto;
+        }
+
+        .result-container h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .result-container pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 30px;
+        }
+
+        .footer a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Cosmic Grain – Tabelul Numeric Universal</h1>
-    <p>Arhitectura vie a fluxurilor de activitate. Creat de Cristian Popescu & Gemini. Vizualizare + logică matematică reală.</p>
-  </header>
-  <div class="container">
-    <section class="docu">
-      <h2>Concept & Principii</h2>
-      <p>
-        <b>Cosmic Grain</b> este o paradigmă numerică creată de Cristian Popescu, o hartă universală unde fiecare cifră <b>(0 1 5 4 2 9 6 8 3 7)</b> acționează ca operator logic fundamental. Sistemul permite clasificarea, monitorizarea și optimizarea oricărui proces din orice domeniu.<br>
-        <b>Fiecare operator numeric:</b>
-      </p>
-      <div class="operators">
-        <div class="opcard"><span class="opnum">0</span>Radical, Punct de Origine, Ancoră</div>
-        <div class="opcard"><span class="opnum">1</span>Unitatea de Bază, Inițierea Acțiunii</div>
-        <div class="opcard"><span class="opnum">5</span>Radical, Punct de Control, Decizie</div>
-        <div class="opcard"><span class="opnum">4</span>Punct de Referință, Unitate de Măsură</div>
-        <div class="opcard"><span class="opnum">2</span>La Pătrat la Infinit, Multiplicare, Diversitate</div>
-        <div class="opcard"><span class="opnum">9</span>Punct Fix, Finalizare, Validare</div>
-        <div class="opcard"><span class="opnum">6</span>Unitatea de Măsură, Volum, Cantitate</div>
-        <div class="opcard"><span class="opnum">8</span>Coordonator, Sincronizare, Integrare</div>
-        <div class="opcard"><span class="opnum">3</span>În Oglindă, Simetric/Asimetric, Stabilitate</div>
-        <div class="opcard"><span class="opnum">7</span>Feedback, Ajustare, Evoluție</div>
-      </div>
-      <p>
-        <b>Structura tabelului:</b> Fiecare strat numeric este generat pe baza operatorilor, cu calcule reale (numere prime, radicali, puteri, simetrii). Poți genera oricâte straturi și analiza legăturile dintre operatori.
-      </p>
-    </section>
-    <section class="tabel-section">
-      <h2>Tabelul Numeric Universal – Generare Interactivă</h2>
-      <button onclick="generateTable()">Generează Tabelul Cosmic Grain</button>
-      <div id="tabel-cosmic"></div>
-    </section>
-  </div>
-  <div class="contact">
-    <span>Contact:</span>
-    <a href="mailto:aercerantik@gmail.com">aercerantik@gmail.com</a>
-  </div>
-  <script>
-    // Definirea operatorilor și funcțiilor matematice
-    const operators = [
-      { num: 0, name: "Radical, Punct de Origine", fn: () => 0 },
-      { num: 1, name: "Unitate de Bază", fn: () => 1 },
-      { num: 5, name: "Radical, Control", fn: () => Math.sqrt(5).toFixed(5) },
-      { num: 4, name: "Referință, Măsură", fn: () => 4 },
-      { num: 2, name: "La Pătrat la Infinit", fn: () => "∞" }, // concept
-      { num: 9, name: "Finalizare", fn: () => Math.sqrt(9) },
-      { num: 6, name: "Măsură, Volum", fn: () => 6 },
-      { num: 8, name: "Coordonator", fn: () => 8 },
-      { num: 3, name: "Oglindă, Simetrie", fn: () => "↔" }, // concept
-      { num: 7, name: "Feedback/Ajustare", fn: () => "cycle" }
-    ];
-    // funcție pentru generarea de numere prime
-    function nthPrime(n) {
-      let count = 0, num = 2;
-      while (true) {
-        if (isPrime(num)) {
-          count++;
-          if (count === n) return num;
-        }
-        num++;
-      }
-    }
-    function isPrime(num) {
-      if (num < 2) return false;
-      for (let i = 2; i <= Math.sqrt(num); i++)
-        if (num % i === 0) return false;
-      return true;
-    }
-    // funcție pentru generarea unui strat Cosmic Grain
-    function generateLayer(layerNum) {
-      // Combinație: operator, valoare matematică, număr prim, simetrie
-      const data = [];
-      for (let i = 0; i < operators.length; i++) {
-        const op = operators[i];
-        let prime = nthPrime(layerNum + i);
-        let mathVal = op.fn();
-        data.push({
-          operator: op.num,
-          denumire: op.name,
-          valoare: mathVal,
-          prim: prime,
-          simetrie: (op.num % 2 === 0) ? "simetric" : "asim."
+
+    <div class="app-container">
+        <h1>Sistemul de Gestiune a Fluxurilor de Lucru</h1>
+        <p style="text-align: center; color: var(--text-light);"><i>Demonstrație bazată pe Arhitectura Numerică "Ca La Carte"</i></p>
+
+        <div class="input-group">
+            <label for="inputField">Introduceți datele (text, numere, simboluri):</label>
+            <textarea id="inputField" placeholder="Introduceți aici date pentru procesare (ex: 2, 20, 30, 40... sau 'eroare', sau 'tranzactie valida')"></textarea>
+            <p style="text-align: center; color: #6c63ff; font-style: italic; font-size: 0.9em; margin-top: 10px;">
+                <i>Pentru a vedea corectarea automată a erorilor, introduceți 'eroare' sau 'defecțiune' în text.</i>
+            </p>
+        </div>
+
+        <div class="mode-selection">
+            <button id="processButton">Execută Fluxul de Lucru</button>
+        </div>
+
+        <div class="result-container">
+            <h2>Rezultat:</h2>
+            <pre id="outputField"></pre>
+        </div>
+
+        <div class="footer">
+            <p>Un concept de <b>Cristian Popescu</b> & <b>Google Gemini</b></p>
+            <p>Toate drepturile rezervate &copy; 2025</p>
+            <a href="https://github.com/cronosrescris" target="_blank">Vezi proiectul pe GitHub</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputField = document.getElementById('inputField');
+            const outputField = document.getElementById('outputField');
+            const processButton = document.getElementById('processButton');
+
+            // Operatorii principali ai sistemului tau numeric
+            const operatorMap = {
+                0: (data, context) => {
+                    context.output += `\n[0. Radical] - Punct de start, ancoră.\n`;
+                    context.output += `   Input: "${data}"\n`;
+                    return { data: data, context: context };
+                },
+                1: (data, context) => {
+                    context.output += `\n[1. Unitate de Baza] - Definește unitatea fundamentală.\n`;
+                    context.output += `   Acțiune: Procesare inițiată.\n`;
+                    return { data: data, context: context };
+                },
+                2: (data, context) => {
+                    context.output += `\n[2. Creștere și Multiplicare] - Extinde sistemul.\n`;
+                    const numbers = data.match(/\d+/g) ? data.match(/\d+/g).map(Number) : [];
+                    let result = "   - Fără numere. Se pregătește pentru diversitate.\n";
+                    if (numbers.length > 0) {
+                        result = `   - Se adaptează la date: ${numbers.join(', ')}.\n`;
+                    }
+                    context.output += result;
+                    return { data: data, context: context };
+                },
+                3: (data, context) => {
+                    context.output += `\n[3. În Oglindă] - Repară greșeli, menține simetria. (Corectează din mers)\n`;
+                    let correctedData = data;
+                    if (data.toLowerCase().includes("eroare") || data.toLowerCase().includes("defecțiune")) {
+                        context.output += `   - **Anomalie rezolvată!** Eroare detectată și corectată instantaneu.\n`;
+                        correctedData = data.replace(/eroare|defecțiune/gi, "date corectate");
+                    }
+                    context.output += `   Verificare coerență: Sistemul este stabil.\n`;
+                    return { data: correctedData, context: context };
+                },
+                4: (data, context) => {
+                    context.output += `\n[4. Punct de Referință] - Stabilește coordonatele.\n`;
+                    context.output += `   Coordonată: ${data.split(' ')[0]}\n`;
+                    return { data: data, context: context };
+                },
+                5: (data, context) => {
+                    context.output += `\n[5. Punct de Control] - Monitorizează și validează.\n`;
+                    let isValid = !data.toLowerCase().includes("frauda");
+                    context.output += `   Stare de validare: ${isValid ? 'VALID' : 'INVALID'}\n`;
+                    return { data: data, context: context, isValid: isValid };
+                },
+                6: (data, context) => {
+                    context.output += `\n[6. Unitate de Măsură] - Evaluează volumul și cantitatea.\n`;
+                    const wordCount = data.split(/\s+/).filter(w => w).length;
+                    context.output += `   Volum: ${wordCount} cuvinte.\n`;
+                    return { data: data, context: context };
+                },
+                7: (data, context) => {
+                    context.output += `\n[7. Feedback și Ajustare] - Îmbunătățește performanța.\n`;
+                    const hasError = context.output.includes("INVALID") || context.output.includes("Anomalie");
+                    const feedback = hasError ? "Se aplică ajustări automate pentru a menține stabilitatea." : "Sistemul funcționează optim.";
+                    context.output += `   Feedback: ${feedback}\n`;
+                    return { data: data, context: context };
+                },
+                8: (data, context) => {
+                    context.output += `\n[8. Coordonator] - Sincronizează fluxurile.\n`;
+                    context.output += `   Coordonare: Se ordonează datele pentru integrare.\n`;
+                    return { data: data, context: context };
+                },
+                9: (data, context) => {
+                    context.output += `\n[9. Punct Fix] - Asigură stabilitatea.\n`;
+                    context.output += `   Stabilitate: Sistemul este ancorat, indiferent de complexitate.\n`;
+                    return { data: data, context: context };
+                },
+                10: (data, context) => {
+                    context.output += `\n[10. La Pătrat la Infinit Simetric] - Creștere coerentă și infinită.\n`;
+                    context.output += `   Expansiune simetrică: Se extinde la infinit fără a rupe coerența.\n`;
+                    context.output += `   Legat de Operatorul 3 (În Oglindă).\n`;
+                    return { data: data, context: context };
+                },
+                11: (data, context) => {
+                    context.output += `\n[11. La Pătrat la Infinit Asimetric] - Creștere neomogenă, dar coerentă.\n`;
+                    context.output += `   Expansiune asimetrică: Se adaptează la date neomogene, menținând stabilitatea.\n`;
+                    context.output += `   Legat de Operatorul 3 (În Oglindă).\n`;
+                    return { data: data, context: context };
+                }
+            };
+
+            const coreFlow = [0, 1, 5, 4, 2, 8, 3, 6, 7, 9, 10, 11];
+
+            const executeFlow = (input, flow, operators) => {
+                let currentResult = { data: input, context: { output: '' } };
+                for (const operatorId of flow) {
+                    if (operators[operatorId]) {
+                        currentResult = operators[operatorId](currentResult.data, currentResult.context);
+                    }
+                }
+                return currentResult.context.output;
+            };
+
+            processButton.addEventListener('click', () => {
+                const inputText = inputField.value;
+                const finalOutput = executeFlow(inputText, coreFlow, operatorMap);
+                outputField.textContent = finalOutput;
+            });
         });
-      }
-      return data;
-    }
-    // generarea tabelului complet
-    function generateTable() {
-      const nrStraturi = 5; // poți schimba aici
-      let html = `<table>
-        <tr>
-          <th>Strat</th>
-          <th>Operator</th>
-          <th>Denumire</th>
-          <th>Valoare matematică</th>
-          <th>Număr prim</th>
-          <th>Simetrie</th>
-        </tr>`;
-      for (let layer = 1; layer <= nrStraturi; layer++) {
-        const data = generateLayer(layer);
-        for (let i = 0; i < data.length; i++) {
-          const row = data[i];
-          html += `<tr>
-            <td>${layer}</td>
-            <td>${row.operator}</td>
-            <td>${row.denumire}</td>
-            <td>${row.valoare}</td>
-            <td>${row.prim}</td>
-            <td>${row.simetrie}</td>
-          </tr>`;
-        }
-      }
-      html += "</table>";
-      document.getElementById("tabel-cosmic").innerHTML = html;
-    }
-  </script>
+    </script>
 </body>
-    </html>
+</html>
